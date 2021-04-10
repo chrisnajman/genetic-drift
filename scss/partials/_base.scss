@@ -1,0 +1,210 @@
+$fontSpecial: Arial, sans-serif;
+$link:#663030;
+$linkHover: #6495ed;
+$dominantColour:blue;
+$recessiveColour:red;
+$strongFontWeight: 600;
+$headerFontWeight: 600;
+$borderColour: #acacac;
+
+@mixin inherit {
+    font-size: inherit;
+    font-family: inherit;
+}
+
+@mixin fitContent {
+    width: fit-content;
+    width: -moz-fit-content;
+}
+
+@mixin marginCentre {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin-top:0;
+    margin-bottom: 1rem;
+}
+
+html {
+    overflow-y: scroll;
+    margin-bottom:0;
+    font-size:100%;
+}
+
+
+body {
+    font-family: "Georgia";
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    background-image:  linear-gradient(#c1d5f8, #c2acac);
+
+    @media screen and (min-width: 960px) {
+        font-size: 1.3rem;
+
+    }    
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: $headerFontWeight;
+    font-family: "Arial Thin", sans-serif;
+}
+
+h2 {
+    padding-top: 1rem;
+}
+
+a { 
+    text-decoration:none;
+    color: $link;
+    border-bottom:1px dotted $link;
+    &:hover { 
+        color: $linkHover;
+        border-bottom:1px dotted $linkHover;
+    }
+}
+
+figure { margin:0;}
+img { 
+    max-width: 100%;
+    height: auto;
+    display:block;
+}
+table { 
+    border-spacing: 0;
+    border-style:solid;
+    border-color: $borderColour;
+    border-width: 1px 0 0 1px;
+    background:rgb(226, 226, 226);
+    margin: 1rem 0;
+}
+th, td { 
+    border-style:solid;
+    border-color: $borderColour;
+    border-width: 0 1px 1px 0;
+    padding: 0.5rem;
+}
+td { background: white;}
+th {font-weight: $strongFontWeight}
+
+dt {
+    font-weight: $strongFontWeight; 
+    font-family: $fontSpecial;
+}
+
+ul { padding-left: 1.2rem; }
+
+p, li, dd {
+    max-width: 60ch;
+}
+
+form {
+    width: fit-content;
+}
+
+button {
+    cursor: pointer;
+    @include inherit;
+    padding: 0.75rem;
+    border:0;
+    border-radius: 0.75rem;
+    font-family: $fontSpecial;
+
+    &:focus {
+    outline: none;
+    box-shadow: 0 0 0.125rem 0.1875  $borderColour;
+    }
+}
+
+label {
+    font-size: inherit;
+    font-family: $fontSpecial;
+}
+
+input {
+    &[type="text"],
+    &[type="number"] {
+        @include inherit;
+        padding: 0.5rem 1rem;
+    }
+}
+
+select {
+    font-size: inherit;
+    font-family: $fontSpecial;
+    padding: 0.5rem 1rem;
+}
+
+.centre-element { 
+    @include marginCentre; 
+}
+
+.asterisk {
+    font-weight: $strongFontWeight;
+    color: red;
+}
+
+.no-bullets {
+    padding-left:0;
+    list-style:none;
+}
+
+.hide {
+    display: none;
+}
+.show {
+    display: block;
+}
+.inline-block { display: inline-block; }
+
+.strong {
+    font-weight: $strongFontWeight;
+}
+
+.dominant {
+    color:$dominantColour;
+    font-weight: $strongFontWeight;
+    font-familY: $fontSpecial;
+}
+.recessive {
+    color: $recessiveColour;
+    font-weight: $strongFontWeight;
+    font-familY: $fontSpecial;
+}
+
+.container {
+    @include fitContent;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    background:white;
+    @media screen and (min-width: 960px) {
+        padding: 3rem 5rem;
+    }
+}
+
+.page-title {
+    margin-bottom: 2rem;    
+    @media screen and (min-width: 960px) {
+        line-height: normal;
+    }
+}
+
+.divider { 
+    border-bottom: 1px solid $borderColour;
+    &:last-child { border-bottom: 0; }
+    padding-bottom: 1rem;
+}
+
+
+
+
+

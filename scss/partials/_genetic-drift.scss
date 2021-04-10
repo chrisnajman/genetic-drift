@@ -1,0 +1,115 @@
+/**
+    CHART
+*/
+
+.chart-height {
+    min-height: 15rem;
+    @media (min-width: 960px) {
+        min-height: 30.375rem;
+    }
+
+}
+
+.chart-title {
+    text-align: center;
+    width: 100%;
+
+}
+.chart {
+
+    svg {
+        overflow: visible;
+        padding-left:0.5rem;
+        .axis {
+            font-size: 1.3rem;
+            @media (min-width: 700px) {
+                font-size: 1rem;
+            }
+        }
+
+        .legend_title,
+        .legend_text {
+            display: none;
+        }
+
+    }
+}
+
+/* chart form */
+.chart-selections {
+
+    margin-bottom:0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    select {
+        display: block;
+        margin: 0 auto;
+    }
+
+
+}
+
+.form-buttons {
+    display: flex;
+
+}
+
+.clear-results-btn { margin-left: 1rem; }
+
+/* Loading chart */
+.chart-loading { 
+    // padding:2rem 0;
+    text-align: center; 
+    font-style: italic; 
+    font-family: $fontSpecial;
+    font-weight: $strongFontWeight; 
+  
+}
+
+.pulse {
+
+    animation: pulsate 3s ease-out;
+    animation-iteration-count: infinite; 
+    opacity: 0.5;
+
+}
+
+@keyframes pulsate {
+    0% { 
+        opacity: 0.3;
+    }
+    50% { 
+        opacity: 1.0;
+    }
+    100% { 
+        opacity: 0.3;
+    }
+}
+
+/* screenshots */
+
+.chart-screenshot {
+    border: 1px dotted $borderColour;
+    padding: 1rem 1rem 0 1rem;
+    &:last-child { margin-bottom: 2rem; }
+
+    &-heading { text-align: center;}
+
+    img {
+        @include marginCentre;
+        margin-bottom: 1rem;
+       
+    }
+
+    figCaption { text-align: center;}
+
+
+}
+
+
+
+
+
+

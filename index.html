@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A discussion of the the effects of genetic drift. The page includes a simulator for charting different genetic drift scenarios."
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <title>Genetic Drift</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://d3js.org/d3.v6.min.js" defer></script>
+    <script src="js/helper-functions.js" defer></script>
+    <script src="js/genetic-drift.js" defer></script>
+    <script src="js/draw-line-chart.js" defer></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <nav class="page-nav">
+        &#9668; Previous:
+        <a
+          href="https://chrisnajman.github.io/hardy-weinberg-equilibrium-model/"
+          >Hardy-Weinberg Equilibrium Model</a
+        >
+      </nav>
+
+      <main>
+        <article>
+          <header class="page-header divider">
+            <h1 class="page-title">Genetic Drift: Random Events</h1>
+            <p>
+              The Hardy-Weinberg Equilibrium Model describes a hypothetical
+              world where allele frequencies remain constant over time, i.e. one
+              where evolution does not take place. Once random events are
+              allowed for, evolution is taking place, and the model no longer
+              applies. The net effect of genetic drift is a reduction in genetic
+              variation.
+            </p>
+          </header>
+          <!-- Evolution -->
+          <section class="divider">
+            <h2>Evolution</h2>
+            <p>
+              Evolution can be defined as the change in allele frequencies in a
+              population over generations. Both natural selection and genetic
+              drift are mechanisms of evolution.
+            </p>
+
+            <dl>
+              <dt>Natural Selection</dt>
+              <dd>
+                Changes in allele frequencies in a population over generations
+                as a result of their fitness for reproduction. The effects of
+                natural selection become apparent only in large populations over
+                long time periods.
+              </dd>
+              <dt>Genetic Drift</dt>
+              <dd>
+                Changes in allele frequencies in a population over generations
+                due to random events. The effects of genetic drift appear mainly
+                in small populations over short time periods.
+              </dd>
+            </dl>
+          </section>
+
+          <!-- GENETIC DRIFT -->
+          <section class="divider">
+            <h2>Genetic Drift</h2>
+            <p>
+              Genetic drift, while not being as important as natural selection
+              as a driver in evolution, nevertheless affects allele frequencies.
+              An event (such as an earthquake) might kill a large percentage of
+              a population. Before the event the frequencies for the alleles of
+              particular gene might have been 50/50. After, entirely dependent
+              on chance, they could be 25/75 or 80/20, etc.
+            </p>
+            <p>
+              Genetic drift is particularly evident in smaller populations. This
+              reflects the law of large numbers.
+            </p>
+            <h3>The law of large numbers</h3>
+            <p>
+              The law of large numbers states that in the long run random events
+              tend to average out at the expected value.
+            </p>
+
+            <h4>Example: tossing a coin</h4>
+            <p>
+              There are two sides to a coin so the probability of heads landing
+              is 50&percnt; and the probability of tails landing is also
+              50&percnt;. The expected value is therefore 0.5.
+            </p>
+            <p>
+              However, if we tossed the coin only ten times, we wouldn't be
+              surprised if heads landed 70&percnt; of the time and tails
+              30&percnt; of the time, or even 100&percnt; and 0&percnt; of the
+              time.
+            </p>
+            <p>
+              On the other hand, if we tossed the coin a million times, we would
+              be very surprised if we obtained these ranges of values. It is
+              much more likely that the result would be very close to 50&percnt;
+              for either side, i.e. close to the expected value of 0.5. (As up
+              to ten simulations can be run at the same time, drifting to both
+              fixation and loss may be seen as possible outcomes in the same
+              chart.)
+            </p>
+
+            <form id="number-coin-tosses">
+              <label for="selectNumber"
+                >Choose number of coin tosses:
+                <select id="selectNumber">
+                  <option value="1">1</option>
+                  <option value="10">10</option>
+                  <option value="100">100</option>
+                  <option value="1000">1,000</option>
+                  <option value="10000">10,000</option>
+                  <option value="100000">100,000</option>
+                  <option value="1000000">1,000,000</option>
+                </select>
+              </label>
+              <p>
+                You can keep clicking the button at the selected value to see
+                variations.
+              </p>
+              <div class="form-buttons">
+                <button id="showCoinResultsBtn">Show Results</button>
+                <button id="clearCoinResultsBtn" class="clear-results-btn hide">
+                  Clear chart
+                </button>
+              </div>
+            </form>
+
+            <div id="results" class="results hide">
+              <p>Out of <span id="numCoinTosses"></span> coin tosses:</p>
+              <table>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <th scope="col">Value</th>
+                    <th scope="col">&percnt;</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">Heads</th>
+                    <td id="numHeads"></td>
+                    <td id="headsPercent"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Tails</th>
+                    <td id="numTails"></td>
+                    <td id="tailsPercent"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p>
+              Given an infinite population (as we are for one in Hardy-Weinberg
+              equilibrium) the results would be
+              <strong>exactly</strong> 50&percnt; each. However, in the real
+              world, there are no infinite populations.
+            </p>
+          </section>
+
+          <section class="divider">
+            <h2>Simulating Genetic Drift</h2>
+            <p>
+              The charts simulate the possible frequencies of one allele,
+              <span class="strong">A1</span>, having an initial frequency of
+              0.5, over a selected number of generations at different population
+              sizes. Allele <span class="strong">A1</span>'s corresponding
+              allele, <span class="strong">A2</span>, is not shown but its fate
+              can be inferred from the results:
+            </p>
+            <ul>
+              <li>
+                If the line goes to the top of the x-axis (1.0) and flattens
+                out,
+                <span class="strong">A1</span> has drifted to fixation (it is
+                the only surviving allele) and
+                <span class="strong">A2</span> has drifted to loss (it has gone
+                extinct),
+              </li>
+              <li>
+                If the line goes to the bottom of the x-axis (0.0) and flattens
+                out,
+                <span class="strong">A1</span> has drifted to loss and
+                <span class="strong">A2</span> has drifted to fixation.
+              </li>
+            </ul>
+
+            <form id="chartInputForm">
+              <div class="chart-selections">
+                <!-- number of simulations-->
+                <label for="selectNumSimulations"
+                  >No. simulations:
+                  <select id="selectNumSimulations">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10" selected="selected">10</option>
+                  </select>
+                </label>
+                <!-- end number of simulations -->
+                <label for="selectPopulationSize"
+                  >Population size:
+                  <select id="selectPopulationSize">
+                    <option value="20" selected="selected">20</option>
+                    <option value="200">200</option>
+                    <option value="2000">2,000</option>
+                  </select>
+                </label>
+                <label for="selectNumberGenerations"
+                  >No. generations:
+                  <select id="selectNumberGenerations">
+                    <option value="50" selected="selected">50</option>
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="400">400</option>
+                    <option value="700">700</option>
+                  </select>
+                </label>
+              </div>
+              <p>
+                You can keep clicking the button at the selected values to see
+                variations.
+              </p>
+              <div class="form-buttons">
+                <button id="showChartResultsBtn">Show Chart</button>
+                <button
+                  id="clearChartResultsBtn"
+                  class="clear-results-btn hide"
+                >
+                  Clear chart
+                </button>
+              </div>
+            </form>
+
+            <div id="chartContainer" class="chart-container show">
+              <h3 id="chartTitle" class="chart-title hide">
+                No. simulations: <span id="numSimulationsTxt"></span> |
+                Population size: <span id="populationSize"></span> | No.
+                generations:
+                <span id="numGenerations"></span>
+              </h3>
+              <div id="chart_loading" class="chart-loading"></div>
+              <div id="chart" class="chart"></div>
+            </div>
+
+            <h3>Probable results</h3>
+
+            <p>
+              Below are three screenshots of charts showing ten simulations with
+              different population sizes, over fifty generations.
+            </p>
+            <div class="chart-screenshot">
+              <h4 class="chart-screenshot-heading">Population: 20</h4>
+              <figure>
+                <img
+                  src="img/chart-20.png"
+                  alt="Screenshot of chart: Number of simulations: 10, Generations: 50, Population: 20"
+                />
+                <figcaption>
+                  In a small population, the
+                  <span class="strong">A1</span> rapidly drifts to fixation or
+                  loss.
+                </figcaption>
+              </figure>
+            </div>
+            <div class="chart-screenshot">
+              <h4 class="chart-screenshot-heading">Population: 200</h4>
+              <figure>
+                <img
+                  src="img/chart-200.png"
+                  alt="Screenshot of chart: Number of simulations: 10, Generations: 50, Population: 200"
+                />
+                <figcaption>
+                  In a medium-sized population there are already no instances of
+                  drift towards fixation or loss.
+                </figcaption>
+              </figure>
+            </div>
+            <div class="chart-screenshot">
+              <h4 class="chart-screenshot-heading">Population: 2000</h4>
+              <figure>
+                <img
+                  src="img/chart-2000.png"
+                  alt="Screenshot of chart: Number of simulations: 10, Generations: 50, Population: 200"
+                />
+                <figcaption>
+                  In a large population the allele frequency is tending towards
+                  the expected value of 0.5.
+                </figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <!-- Probable results -->
+          <section class="divider">
+            <h2>Causes of Genetic Drift</h2>
+            <p>
+              As we have seen, a small population can rapidly drift towards
+              fixation or loss of alleles, resulting in loss of genetic
+              variation. Random events can cause a large population to become a
+              smaller one in a relatively short period of time.
+            </p>
+            <p>
+              The two main categories of random event which can drastically
+              reduce population size are:
+            </p>
+            <dl>
+              <dt>1) The bottleneck effect</dt>
+              <dd>
+                A disease spreads through a large rabbit colony, eventually
+                killing over 90&percnt; of the population. By chance, the small
+                group of survivors only carry the homozygous recessive genotype
+                for white fur. Result: all future generations will have white
+                fur. The allele for white fur will have drifted to fixation, for
+                brown fur to loss.
+              </dd>
+              <dt>2) The founder effect</dt>
+              <dd>
+                A landslide separates a small group of rabbits from the main
+                colony. By chance, this group only carries the heterozygous
+                dominant genotype for brown fur. Result: the entire next
+                generation of the newly-founded colony will have brown fur. The
+                allele for brown fur will have drifted to fixation, for white
+                fur to loss.
+              </dd>
+            </dl>
+
+            <p>
+              A more detailed examination of the bottleneck and founder effects
+              will be discussed in a later article.
+            </p>
+          </section>
+        </article>
+      </main>
+    </div>
+  </body>
+</html>
