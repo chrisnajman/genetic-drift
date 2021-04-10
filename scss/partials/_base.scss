@@ -1,4 +1,4 @@
-$fontSpecial: Arial, sans-serif;
+$fontSpecial: "Arial Thin", sans-serif;
 $link:#663030;
 $linkHover: #6495ed;
 $dominantColour:blue;
@@ -56,7 +56,7 @@ h4,
 h5,
 h6 {
     font-weight: $headerFontWeight;
-    font-family: "Arial Thin", sans-serif;
+    font-family: $fontSpecial;
 }
 
 h2 {
