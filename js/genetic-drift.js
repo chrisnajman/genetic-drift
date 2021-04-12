@@ -150,7 +150,7 @@ chartInputForm.addEventListener("submit", e => {
     draw_line_chart(
       allData,
       "Generation",
-      "P frequency (A1 allele)",
+      "P (B allele frequency)",
       ["Population size:", N, "Generations:", generations],
       "#chart",
       "chart"

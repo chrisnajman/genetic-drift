@@ -1,8 +1,8 @@
 $fontSpecial: "Arial Thin", sans-serif;
 $link:#663030;
 $linkHover: #6495ed;
-$dominantColour:blue;
-$recessiveColour:red;
+$dominantColour:currentColor;
+$recessiveColour:#663030;
 $strongFontWeight: 600;
 $headerFontWeight: 600;
 $borderColour: #acacac;
@@ -102,6 +102,9 @@ dt {
 }
 
 ul { padding-left: 1.2rem; }
+ul ul { 
+    padding-top: 1rem;
+}
 
 p, li, dd {
     max-width: 60ch;
@@ -181,6 +184,13 @@ select {
 
 .strong {
     font-weight: $strongFontWeight;
+    font-familY: $fontSpecial;
+    
+}
+
+.strong-special {
+    font-weight: $strongFontWeight;
+    font-familY: $fontSpecial;
 }
 
 .dominant {

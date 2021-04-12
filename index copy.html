@@ -25,201 +25,59 @@
       <main>
         <article>
           <header class="page-header">
-            <h1 class="page-title">Genetic Drift: Random Sampling</h1>
+            <h1 class="page-title">Genetic Drift: Random Events</h1>
             <p>
               The Hardy-Weinberg Equilibrium Model describes a hypothetical
               world where allele frequencies remain constant over time, i.e. one
-              in which evolution does not take place. One of the assumptions of
-              the model is an infinite population size. If this assumption is
-              dropped, evolution becomes possible via the mechanism of genetic
-              drift.
+              where evolution does not take place. If random events are
+              introduced, they will affect allele frequencies. Therefore
+              evolution will be taking place and the Hardy-Weinberg model will
+              no longer apply.
             </p>
           </header>
+          <!-- Evolution -->
+          <section>
+            <h2>Evolution</h2>
+            <p>
+              Evolution can be defined as the change in allele frequencies in a
+              population over generations. Both natural selection and genetic
+              drift are mechanisms of evolution.
+            </p>
+
+            <dl>
+              <dt>Natural Selection</dt>
+              <dd>
+                Natural Selection can be defined as the change allele
+                frequencies in a population over generations as a result of
+                their fitness for reproduction. The effects of natural selection
+                become apparent only in large populations over long time
+                periods.
+              </dd>
+              <dt>Genetic Drift</dt>
+              <dd>
+                Genetic Drift can be defined as the change a population over
+                generations due to random events. The effects of genetic drift
+                appear mainly in small populations over short time periods and
+                lead to a significant reduction in genetic variation.
+              </dd>
+            </dl>
+          </section>
 
           <!-- GENETIC DRIFT -->
           <section>
             <h2>Genetic Drift</h2>
             <p>
-              Genetic drift is the random sampling of alleles in a population.
-              That is to say, the frequency of a particular allele in relation
-              to its counterpart is not determined by natural selection, but by
-              chance.
-            </p>
-
-            <p>In population genetics,</p>
-            <ul>
-              <li>
-                <strong>evolution</strong> is defined as as the change in allele
-                frequencies in a population over generations. Two evolutionary
-                mechanisms are:
-                <ul>
-                  <li>
-                    <strong>natural selection</strong>, defined  as the change
-                    in allele frequencies in a population over generations
-                    <em>as a result of their fitness for reproduction</em>.
-                  </li>
-                  <li>
-                    <strong>genetic drift</strong>, defined as the change in
-                    allele frequencies in a population over generations
-                    <em>due to random sampling</em>, leading to loss of genetic
-                    variation.
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            <p>
-              Genetic drift occurs in all non-infinite populations, but its
-              effects are more clearly apparent in small populations. The
-              'drift' in genetic drift can be explained most easily with an
-              example:
+              Genetic drift, while not being as important as natural selection
+              as a driver in evolution, nevertheless affects allele frequencies.
+              An event (such as an earthquake) might kill a large percentage of
+              a population. Before the event the frequencies for the alleles of
+              particular gene might have been 50/50. After, entirely dependent
+              on chance, they could be 25/75 or 80/20, etc.
             </p>
             <p>
-              Given two alleles of a gene coding for fur colour,
-              <span class="dominant">B</span> and
-              <span class="recessive">b</span>, either may move (drift) towards:
+              Genetic drift is particularly evident in smaller populations. This
+              reflects the law of large numbers.
             </p>
-            <ul class="no-bullets">
-              <li>
-                <strong>Fixation</strong> &mdash; only
-                <span class="dominant">B</span> survives (or vice-versa).
-              </li>
-              <li>
-                <strong>Loss</strong> &mdash;
-                <span class="recessive">b</span> becomes extinct (or
-                vice-versa).
-              </li>
-            </ul>
-            <p>
-              To reiterate: whichever allele drifts to fixation or loss is a
-              matter of chance, not of natural selection. The surviving allele
-              could be detrimental or beneficial (or neither) towards the
-              adaptability of the phenotype to its environment.
-            </p>
-          </section>
-
-          <section>
-            <h2>Causes</h2>
-            <p>
-              As mentioned, genetic drift occurs most markedly in small
-              populations. The events that produce small populations are of two
-              main kinds:
-            </p>
-            <h3>1) The Bottleneck Effect</h3>
-            <p>
-              Some kind of catastrophic event occurs, killing off a large
-              percentage of a population. Subsequent generations will have a
-              much smaller allele pool to draw from, and chance events (e.g.
-              reproductory success) can lead to the disappearance of a
-              particular allele from the population within a few generations.
-            </p>
-            <h3>2) The Founder effect</h3>
-            <p>
-              A small part of a population breaks off from the main body and
-              becomes isolated from it. The frequencies of the alleles in this
-              much reduced allele pool will now be subject to chance and, as in
-              the bottleneck effect, their drift towards fixation or loss in
-              subsequent generations will become more likely.
-            </p>
-          </section>
-          <section>
-            <h2>An Example</h2>
-            <h3>Generation One (following a bottleneck or founder effect)</h3>
-            <p>A small population of ten rabbits is made up of:</p>
-            <ul>
-              <li>
-                Eight individuals with black fur (genotype
-                <span class="dominant">BB</span> or
-                <span class="dominant">Bb</span>) and
-              </li>
-              <li>
-                two individuals with brown fur (genotype
-                <span class="recessive">bb</span>).
-              </li>
-            </ul>
-            <ul class="no-bullets">
-              <li>
-                <span class="strong-special">P</span> (<span class="dominant"
-                  >B</span
-                >
-                allele frequency) &equals; 0.5
-              </li>
-              <li>
-                <span class="strong-special">q</span> (<span class="recessive"
-                  >b</span
-                >
-                allele frequency) &equals; 0.5
-              </li>
-            </ul>
-            <img
-              src="img/generation-1.png"
-              alt="Generation one: five out of ten rabbits (BB, BB, Bb, Bb, Bb) reproduce."
-            />
-            <p>Five rabbits (outlined in red) reproduce.</p>
-
-            <h3>Generation 2</h3>
-            <ul class="no-bullets">
-              <li>
-                <span class="strong-special">P</span> (<span class="dominant"
-                  >B</span
-                >
-                allele frequency) &equals; 0.7
-              </li>
-              <li>
-                <span class="strong-special">q</span> (<span class="recessive"
-                  >b</span
-                >
-                allele frequency) &equals; 0.3
-              </li>
-            </ul>
-            <img
-              src="img/generation-2.png"
-              alt="Generation two: two out of ten rabbits (BB, BB) reproduce."
-            />
-            <p>Two rabbits reproduce.</p>
-
-            <h3>Generation 3</h3>
-            <ul class="no-bullets">
-              <li>
-                <span class="strong-special">P</span> (<span class="dominant"
-                  >B</span
-                >
-                allele frequency) &equals; 1
-              </li>
-              <li>
-                <span class="strong-special">q</span> (<span class="recessive"
-                  >b</span
-                >
-                allele frequency) &equals; 0
-              </li>
-            </ul>
-            <img
-              src="img/generation-3.png"
-              alt="Generation three: all ten rabbits are now of genotype BB."
-            />
-
-            <p>
-              The gene for brown fur (<span class="recessive">bb</span>) has
-              disappeared (drifted to loss) in only three generations.
-            </p>
-            <p>
-              The fact that five rabbits reproduced in the first generation and
-              only two reproduced in the second was purely a matter of chance.
-            </p>
-            <p>
-              However, if the first generation population had been much larger,
-              say a thousand rabbits rather than ten, there would have initially
-              been two hundred rabbits with the
-              <span class="recessive">bb</span> genotype rather than two, and
-              the likelihood that none of these rabbits would have passed on
-              their genes to the third generation would have been much smaller.
-            </p>
-            <p>
-              This tendency towards the fixation or loss of alleles in small
-              populations reflects the law of large numbers.
-            </p>
-          </section>
-
-          <section>
             <h3>The law of large numbers</h3>
             <p>
               The law of large numbers states that in the long run random events
@@ -308,26 +166,26 @@
             <h2>Simulating Genetic Drift</h2>
             <p>
               The charts simulate the possible frequencies of one allele,
-              <span class="dominant">B</span>, having an initial frequency of
+              <span class="strong">A1</span>, having an initial frequency of
               0.5, over a selected number of generations at different population
-              sizes. Allele <span class="dominant">B</span>'s corresponding
-              allele, <span class="recessive">b</span>, is not shown but its
-              fate can be inferred from the results:
+              sizes. Allele <span class="strong">A1</span>'s corresponding
+              allele, <span class="strong">A2</span>, is not shown but its fate
+              can be inferred from the results:
             </p>
             <ul>
               <li>
                 If the line goes to the top of the x-axis (1.0) and flattens
                 out,
-                <span class="dominant">B</span> has drifted to fixation (it is
+                <span class="strong">A1</span> has drifted to fixation (it is
                 the only surviving allele) and
-                <span class="recessive">b</span> has drifted to loss (it has
-                gone extinct),
+                <span class="strong">A2</span> has drifted to loss (it has gone
+                extinct),
               </li>
               <li>
                 If the line goes to the bottom of the x-axis (0.0) and flattens
                 out,
-                <span class="dominant">B</span> has drifted to loss and
-                <span class="recessive">b</span> has drifted to fixation.
+                <span class="strong">A1</span> has drifted to loss and
+                <span class="strong">A2</span> has drifted to fixation.
               </li>
             </ul>
 
@@ -395,7 +253,7 @@
               <div id="chart" class="chart"></div>
             </div>
 
-            <h3>Sample Results</h3>
+            <h3>Probable results</h3>
 
             <p>
               Below are three screenshots of charts showing ten simulations with
@@ -410,7 +268,7 @@
                 />
                 <figcaption>
                   In a small population, the
-                  <span class="dominant">B</span> allele rapidly drifts to
+                  <span class="strong">A1</span> allele rapidly drifts to
                   fixation or loss.
                 </figcaption>
               </figure>
@@ -441,6 +299,46 @@
                 </figcaption>
               </figure>
             </div>
+          </section>
+
+          <!-- Probable results -->
+          <section>
+            <h2>Causes of Genetic Drift</h2>
+            <p>
+              As we have seen, a small population can rapidly drift towards
+              fixation or loss of alleles, resulting in loss of genetic
+              variation. Random events can cause a large population to become a
+              smaller one in a relatively short period of time.
+            </p>
+            <p>
+              The two main categories of random event which can drastically
+              reduce population size are:
+            </p>
+            <dl>
+              <dt>1) The bottleneck effect</dt>
+              <dd>
+                A disease spreads through a large rabbit colony, eventually
+                killing over 90&percnt; of the population. By chance, the small
+                group of survivors only carry the homozygous recessive genotype
+                for white fur. Result: all future generations will have white
+                fur. The allele for white fur will have drifted to fixation, for
+                brown fur to loss.
+              </dd>
+              <dt>2) The founder effect</dt>
+              <dd>
+                A landslide separates a small group of rabbits from the main
+                colony. By chance, this group only carries the heterozygous
+                dominant genotype for brown fur. Result: the entire next
+                generation of the newly-founded colony will have brown fur. The
+                allele for brown fur will have drifted to fixation, for white
+                fur to loss.
+              </dd>
+            </dl>
+
+            <p>
+              A more detailed examination of the bottleneck and founder effects
+              will be presented in a later article.
+            </p>
           </section>
         </article>
       </main>
