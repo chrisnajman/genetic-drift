@@ -164,6 +164,10 @@ select {
     @include marginCentre; 
 }
 
+.margin-bottom-zero {
+    margin-bottom: 0;
+}
+
 .asterisk {
     font-weight: $strongFontWeight;
     color: red;
@@ -220,27 +224,21 @@ select {
         margin-bottom: 2rem;   
         font-size: 1.85rem; 
         line-height: 1.5;
-        text-align:center;
         @media screen and (min-width: 960px) {
             line-height: normal;
             font-size: 2.6rem;
-            text-align: left;
         }
     }
 
-    &-footer {
-        border-top: 1px solid $borderColour;
-        padding-top: 2rem;
-        margin-top: 2rem;
+}
 
-        a { border-bottom:none;}
+.next-prev {
+    a { border-bottom:none;}
 
-        &-nav {
-        
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
+    ul {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
     }
 }
 

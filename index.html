@@ -22,9 +22,32 @@
 
   <body>
     <div class="container">
+      <header>
+        <nav class="next-prev">
+          <h2 class="sr-only">
+            External links to related pages by the same author
+          </h2>
+          <ul class="no-bullets">
+            <li class="previous">
+              <a
+                href="https://chrisnajman.github.io/hardy-weinberg-equilibrium-model/"
+                >&#9668; Previous: Hardy-Weinberg Equilibrium Model</a
+              >
+            </li>
+            <!-- 
+            <li class="next">
+              <a href="https://chrisnajman.github.io/[]/"
+                >Next:[]
+                &#9658;</a
+              >
+            </li>
+             -->
+          </ul>
+        </nav>
+      </header>
       <main>
         <article>
-          <header class="page-header">
+          <header>
             <h1 class="page-title">Genetic Drift: Random Sampling</h1>
             <p>
               The Hardy-Weinberg Equilibrium Model describes a hypothetical
@@ -123,22 +146,26 @@
           </section>
           <section>
             <h2>An Example</h2>
+            <p>
+              <strong>Assumption</strong>: after each round of reproduction, the
+              previous generation dies out.
+            </p>
             <h3>Generation One (following a bottleneck or founder effect)</h3>
-            <p>A small population of ten rabbits is made up of:</p>
+            <p>A small population of 10 rabbits is made up of:</p>
             <ul>
-              <li>
-                eight individuals with black fur (genotype
+              <li class="margin-bottom-zero">
+                8 individuals with black fur (genotype
                 <span class="dominant">BB</span> or
                 <span class="dominant">B</span><span class="recessive">b</span>)
                 and
               </li>
               <li>
-                two individuals with brown fur (genotype
+                2 individuals with brown fur (genotype
                 <span class="recessive">bb</span>).
               </li>
             </ul>
             <ul class="no-bullets">
-              <li>
+              <li class="margin-bottom-zero">
                 <span class="strong-special">P</span> (<span class="dominant"
                   >B</span
                 >
@@ -151,63 +178,74 @@
                 allele frequency) &equals; 0.5
               </li>
             </ul>
-            <img
-              src="img/generation-1.png"
-              alt="Generation one: five out of ten rabbits (BB, BB, Bb, Bb, Bb) reproduce."
-            />
-            <p>Five rabbits (outlined in red) reproduce.</p>
+            <figure>
+              <img
+                src="img/generation-1.png"
+                alt="Generation one: 5 pairs of rabbits reproduce, each pairing resulting in 2 offspring."
+              />
+              <figcaption>
+                5 pairs have 2 offspring each &equals; 10 total. Then generation
+                one dies out.
+              </figcaption>
+            </figure>
 
             <h3>Generation 2</h3>
             <p>The population is now made up of:</p>
             <ul>
-              <li>
-                nine individuals with black fur (genotype
+              <li class="margin-bottom-zero">
+                9 individuals with black fur (genotype
                 <span class="dominant">BB</span> or
                 <span class="dominant">B</span><span class="recessive">b</span>)
                 and
               </li>
               <li>
-                one individual with brown fur (genotype
+                1 individual with brown fur (genotype
                 <span class="recessive">bb</span>).
               </li>
             </ul>
             <ul class="no-bullets">
-              <li>
+              <li class="margin-bottom-zero">
                 <span class="strong-special">P</span> (<span class="dominant"
                   >B</span
                 >
-                allele frequency) &equals; 0.7
+                allele frequency) &equals; 0.65
               </li>
               <li>
                 <span class="strong-special">q</span> (<span class="recessive"
                   >b</span
                 >
-                allele frequency) &equals; 0.3
+                allele frequency) &equals; 0.35
               </li>
             </ul>
-            <img
-              src="img/generation-2.png"
-              alt="Generation two: two out of ten rabbits (BB, BB) reproduce."
-            />
-            <p>Two rabbits reproduce.</p>
+            <figure>
+              <img
+                src="img/generation-2.png"
+                alt="Generation two: only 1 pair of rabbits reproduce, with 10 offspring."
+              />
+
+              <figcaption>
+                Only 1 pair of rabbits reproduce, having 10 offspring. Then
+                generation two dies out.
+              </figcaption>
+            </figure>
 
             <h3>Generation 3</h3>
             <p>The population is now made up of:</p>
             <ul>
-              <li>
-                ten individuals with black fur (genotype
+              <li class="margin-bottom-zero">
+                10 individuals with black fur (genotype
                 <span class="dominant">BB</span> or
                 <span class="dominant">B</span><span class="recessive">b</span>)
                 and
               </li>
               <li>
-                zero individuals with brown fur (genotype
+                0 individuals with brown fur (genotype
                 <span class="recessive">bb</span>).
               </li>
             </ul>
 
             <ul class="no-bullets">
-              <li>
+              <li class="margin-bottom-zero">
                 <span class="strong-special">P</span> (<span class="dominant"
                   >B</span
                 >
@@ -220,18 +258,21 @@
                 allele frequency) &equals; 0
               </li>
             </ul>
-            <img
-              src="img/generation-3.png"
-              alt="Generation three: all ten rabbits are now of genotype BB."
-            />
+            <figure>
+              <img
+                src="img/generation-3.png"
+                alt="Generation three: all ten rabbits are now of genotype BB."
+              />
+              <figcaption>
+                The gene for brown fur (<span class="recessive">bb</span>) has
+                disappeared (drifted to loss) in only three generations.
+              </figcaption>
+            </figure>
 
             <p>
-              The gene for brown fur (<span class="recessive">bb</span>) has
-              disappeared (drifted to loss) in only three generations.
-            </p>
-            <p>
-              The fact that five rabbits reproduced in the first generation and
-              only two reproduced in the second was purely a matter of chance.
+              The fact that five pairs of rabbits reproduced in the first
+              generation and only one pair reproduced in the second was purely a
+              matter of chance.
             </p>
             <p>
               However, if the first generation population had been much larger,
@@ -479,9 +520,12 @@
           </section>
         </article>
       </main>
-      <footer class="page-footer">
-        <nav>
-          <ul class="no-bullets page-footer-nav">
+      <footer>
+        <nav class="next-prev">
+          <h2 class="sr-only">
+            External links to related pages by the same author
+          </h2>
+          <ul class="no-bullets">
             <li class="previous">
               <a
                 href="https://chrisnajman.github.io/hardy-weinberg-equilibrium-model/"
